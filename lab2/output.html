@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<body>
+    <h3>Розрахунок вашої ваги</h3>
+    <form oninput="pounds.value=(kg.value*2.205).toFixed(3); cents.value=(kg.value/100).toFixed(3)"  >
+        <p>Введіть вашу вагу:
+        <input type="number" name="kg" autofocus></p>
+        <p>Вага у фунтах: <output name="pounds">0</output></p>
+        <p>Вага у центнерах: <output name="cents">0</output></p>
+    </form>
+
+    <br></br>
+    <h3>Введіть 2 числа та отримаєте їх суму</h3>
+    <form onsubmit="return false" oninput="o.value = parseInt(a.value) + parseInt(b.value)">
+        <input name="a" type="number" step="any"> +
+        <input name="b" type="number" step="any"> =
+        <output name="o"></output>
+    </form>
+
+    <br></br>
+    <br></br>
+    <h3>Скільки Ви бажаєте заробляти?</h3>
+    <form oninput="res.value=(hours.value*stav.value + hours.value*stav.value*nal.value).toFixed(2)">
+        1<input id="rng" type="range" name="w" min="1" max="100" value="50" />100
+
+        <p>Розрахуй ЗП</p>
+        <p>Кількість годин: <input name="hours" type="number" step="any"></p>
+        <p>Ставка: <input name="stav" type="number" step="any"></p>
+        <p>Податок (прикл. 0,20): <input name="nal" type="number" step="any"></p>
+
+        <p>Всього ЗП: <output name="res"></output></p>
+    </form>
+
+</body>
