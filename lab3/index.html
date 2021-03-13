@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>Форма оцінки</title>
+       <meta charset="utf-8">
+       <style>
+           form {
+    margin: 0 auto;
+    padding: 20px;
+    width: 450px; 
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px #ccc;
+}
+
+fieldset {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #34495e;
+    border-radius: 5px;
+}
+
+fieldset legend {
+    color: #34495e;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input,
+select,
+output,
+textarea {
+    margin: 0 0 10px 0;
+    padding: 2px 5px;
+    width: 95%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+
+input,
+select {
+    height: 24px;
+}
+
+output {
+    display: inline-block;
+    margin: 0 5px 10px 0;
+    width: 30px;
+    height: 20px;
+    text-align: center;
+}
+
+select[multiple] {
+    height: 100px;
+}
+
+input[type="submit"],
+input[type="reset"] { 
+    display: inline-block;
+    margin: 0 5px;
+    padding: 6px 15px;
+    width: auto;
+    height: auto;
+    border: none;
+    border-radius: 5px;
+    background: #2c3e50;
+    color: #fff;
+}
+
+input[disabled] {
+    background-color: #ebebe3;
+}
+
+.one-third-width {
+    width: 33.3%;
+}
+
+.two-third-width {
+    width: 66.6%;
+}
+
+.half-width {
+    width: 50%;
+}
+
+.one-third-width,
+.two-third-width, 
+.half-width {
+    display: inline-block;
+    margin-right: -4px;
+}
+
+.one-third-width input,
+.two-third-width select {
+    width: 80%;
+}
+
+.half-width input,
+.half-width select {
+    width: 80%;
+}
+
+.half-width input[type="range"] {
+    width: 65%;
+}
+
+.output-area {
+    vertical-align: top;
+}
+
+.buttons {
+    margin-top: 10px;
+    text-align: center;
+}
+
+body {
+	min-width: 553px;
+}
+
+main {
+    min-height: 400px;
+}
+       </style>
+    </head>
+    <body>
+        <header class="page-header"></header>
+        <main>
+            <form action="/echo" method="post">
+                <fieldset>
+                <legend>Особисті дані</legend>
+                <div class="half-width">
+                    <label for="id">ID відгуку</label>
+                    <input type="number" id="id" value="11111" disabled>
+                </div>
+                <div class="half-width">
+			        <label for="name">Ваше ім'я</label>
+			        <input type="text" id="name" value="Ім'я" required>
+		        </div>
+		        </fieldset>
+		        
+		        <fieldset>
+                <legend>Відгук про поїздку</legend>
+			    <div class="half-width">
+			        <label for="country">Країна візиту</label>
+                    <select id="country">
+                        <option>Норвегія</option>
+                        <option>Швеція</option>
+                        <option>Фінляндія</option>
+                        <option>Данія</option>
+                    </select>
+		        </div>
+			    <div class="half-width">
+			        <label for="city">Місто</label>
+			        <input type="search" id="city" value="Місто">
+			    </div>
+			    <div class="half-width">
+			    <label for="rating">Оцінка поїздки</label>
+    			    0 <input type="range" id="rating" min="0" max="10" value="10"> 10
+    			</div>
+    			<div class="half-width output-area">
+    			    <output>10</output>
+    			</div>
+    			<label for="review">Текст відгуку</label>
+    			<textarea spellcheck="false" id="review" rows="5">Все чудово!</textarea>
+    			</fieldset>
+    			
+    			<fieldset>
+    		    <legend>Оцінка готелю</legend>
+			    <div class="half-width">
+			        <label for="hotel">Назва готелю</label>
+			        <input type="text" id="hotel" placeholder="Назва англійською">
+                </div>
+                <div class="half-width">
+			        <label for="arrival_date">Дата заселення</label>
+			        <input type="date" id="arrival_date" placeholder="В форматі дд-мм-рррр">
+                </div>
+                <div class="one-third-width">
+			        <label for="color">Колір вашого браслету</label>
+			        <input type="color" id="color" value="#ff0000">
+			    </div>
+			    <div class="two-third-width">
+			        <label for="dish_rating">Оцінка обідів</label>
+			        <select is="dish_rating">
+			            <option>Найсмачніше в житті!</option>
+			            <option>Смачно!</option>
+			            <option>Посередньо!</option>
+			            <option>Не сподобалось!</option>
+			        </select>
+			    </div>
+			    <label for="fish">Найсмачніша риба</label>
+			    <select id="fish" multiple>
+			        <option selected>Норвежський лосось</option>
+			        <option>Зубатка</option>
+			        <option selected>Морский окунь</option>
+			        <option>Карась</option>
+			        <option>Зеркальний короп</option>
+			    </select>
+			    </fieldset>
+			    
+        		<div class="buttons">
+        		    <input type="submit" value="Надіслати">
+        		    <input type="reset" value="Сбросити">
+    			</div>
+		    </form> 
+        </main>
+        <footer class="page-footer"></footer>
+    </body>
+</html>
